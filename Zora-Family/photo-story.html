@@ -3,7 +3,7 @@
     <html lang="zh-TW">
     <head>
       <meta charset="UTF-8">
-      <title>照片故事集</title>
+      <title>日常的美感</title>
       <style>
         /* 基礎設定 */
         * {
@@ -62,69 +62,71 @@
           transform: scale(1.01);
         }
 
+        /* 照片描述設定 */
+        .photo-description {
+          font-size: 1.8em;
+          line-height: 2;
+          color: #444;
+          margin: 30px auto;
+          text-align: justify;
+          letter-spacing: 0.02em;
+          width: 100%;
+          max-width: 800px;
+          padding: 0 20px;
+        }
+
         /* 引言區塊設定 */
         blockquote {
-          margin: 50px 0;
-          padding: 30px 40px;
-          background: linear-gradient(to right, #f8f9fa, #ffffff);
-          border-left: none;
+          margin: 80px auto;
+          padding: 40px;
+          background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.95));
+          border: none;
+          border-radius: 16px;
           position: relative;
           font-style: normal;
+          width: 85%;
+          max-width: 900px;
+          box-shadow: 
+            0 4px 6px rgba(0, 0, 0, 0.02),
+            0 1px 3px rgba(0, 0, 0, 0.03);
+          backdrop-filter: blur(10px);
         }
 
         blockquote::before {
           content: '"';
           position: absolute;
-          left: -20px;
-          top: 0;
-          font-size: 60px;
+          left: 20px;
+          top: -30px;
+          font-size: 120px;
           color: #3498db;
-          opacity: 0.2;
-          font-family: Georgia, serif;
+          opacity: 0.15;
+          font-family: "Noto Serif TC", serif;
+          line-height: 1;
+        }
+
+        blockquote::after {
+          content: '"';
+          position: absolute;
+          right: 20px;
+          bottom: -80px;
+          font-size: 120px;
+          color: #3498db;
+          opacity: 0.15;
+          font-family: "Noto Serif TC", serif;
+          line-height: 1;
         }
 
         blockquote p {
-          font-size: 1.4em;
+          font-size: 1.6em;
           line-height: 1.8;
-          color: #34495e;
+          color: #2c3e50;
           font-weight: 300;
-          text-align: justify;
+          text-align: center;
           margin: 0;
           padding: 0;
-        }
-
-        /* 段落設定 */
-        p {
-          font-size: 1.2em;
-          line-height: 2;
-          color: #444;
-          margin: 30px 0;
-          text-align: justify;
-          letter-spacing: 0.02em;
-        }
-
-        /* 照片資訊設定 */
-        .photo-info {
-          background: #f8f9fa;
-          padding: 20px 30px;
-          border-radius: 8px;
-          margin: 30px 0;
-          font-family: "SF Mono", "Consolas", monospace;
-          font-size: 0.9em;
-          color: #666;
-          line-height: 1.6;
-        }
-
-        .photo-info ul {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-
-        .photo-info li {
-          margin: 8px 0;
-          display: inline-block;
-          margin-right: 20px;
+          position: relative;
+          z-index: 1;
+          letter-spacing: 0.05em;
         }
 
         /* 分隔線設定 */
@@ -133,6 +135,9 @@
           height: 1px;
           background: linear-gradient(to right, transparent, #e0e0e0, transparent);
           margin: 60px 0;
+          width: 85%;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         /* 響應式設計 */
@@ -142,295 +147,166 @@
           }
 
           h1 {
-            font-size: 2.4em;
+            font-size: 2.6em;
             margin: 40px 0;
           }
 
           h2 {
-            font-size: 1.8em;
+            font-size: 2em;
             margin: 50px 0 20px;
           }
 
+          .photo-description {
+            width: 85%;
+            font-size: 1.5em;
+            line-height: 1.9;
+            padding: 0;
+          }
+
           blockquote {
-            padding: 20px;
-            margin: 30px 0;
+            margin: 60px auto;
+            padding: 30px;
+            width: 90%;
+          }
+
+          blockquote::before {
+            font-size: 100px;
+            top: -25px;
+            left: 10px;
+          }
+
+          blockquote::after {
+            font-size: 100px;
+            bottom: -65px;
+            right: 10px;
           }
 
           blockquote p {
-            font-size: 1.2em;
+            font-size: 1.4em;
+            line-height: 1.9;
+          }
+        }
+
+        @media (max-width: 480px) {
+          h1 {
+            font-size: 2.4em;
           }
 
-          p {
-            font-size: 1.1em;
+          h2 {
+            font-size: 1.8em;
           }
 
-          .photo-info {
-            padding: 15px;
-            font-size: 0.85em;
+          .photo-description {
+            font-size: 1.4em;
+            line-height: 2;
+          }
+
+          blockquote {
+            margin: 40px auto;
+            padding: 25px;
+            width: 92%;
+          }
+
+          blockquote::before {
+            font-size: 80px;
+            top: -20px;
+            left: 10px;
+          }
+
+          blockquote::after {
+            font-size: 80px;
+            bottom: -50px;
+            right: 10px;
+          }
+
+          blockquote p {
+            font-size: 1.3em;
+            line-height: 2;
+            letter-spacing: 0.03em;
           }
         }
       </style>
     </head>
     <body>
       <div class="container">
-        <h1>照片故事集</h1>
+        <h1>日常的美感</h1>
 <blockquote>
 <p>這是一個關於生活、關於愛的視覺敘事，每一張照片都承載著獨特的故事和情感。</p>
 </blockquote>
-<h2>#1</h2>
+<h2>#01</h2>
 <p><img src="./DSC02105.JPG" alt="DSC02105.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">站在家中一隅，女孩舉機拍照，凌亂中藏著家的溫暖與生活的真實節奏。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：32mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 1600</li>
-<li>拍攝時間：2025年3月25日 下午11:26</li>
-</ul>
-</div>
-
-<p>在這片寧靜的時光中，陽光溫柔地灑落在每一片葉子上，彷彿在訴說著大自然的秘密。這是一個關於成長、關於愛的故事，就像《編織勝草》中描述的那樣，每一刻都充滿了生命的奇蹟。</p>
 <hr>
-<h2>#2</h2>
+<h2>#02</h2>
 <p><img src="./DSC02110.JPG" alt="DSC02110.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">她抱著玩偶，用小相機拍著鏡頭，純真無畏，像是在說：輪到我來記錄你了。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：32mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 1000</li>
-<li>拍攝時間：2025年3月25日 下午11:27</li>
-</ul>
-</div>
-
-<p>微風輕拂，帶來遠方的氣息。這張照片捕捉了生活中最純粹的瞬間，讓我們停下腳步，感受當下的美好。正如基默爾所說：「在寂靜中，我們聽見了生命的低語。」</p>
 <hr>
-<h2>#3</h2>
+<h2>#03</h2>
 <p><img src="./DSC02113.JPG" alt="DSC02113.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">大人沖著茶，神情專注，茶香飄散在這日常中，一如時光慢慢沉澱的模樣。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：32mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 4000</li>
-<li>拍攝時間：2025年3月25日 下午11:28</li>
-</ul>
-</div>
-
-<p>這是一個關於連結的故事，關於我們如何與自然、與彼此建立深厚的關係。每一幀畫面都是一個新的開始，一個新的發現。</p>
 <hr>
-<h2>#4</h2>
+<h2>#04</h2>
 <p><img src="./DSC02117.JPG" alt="DSC02117.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">她的笑容透過玩具相機一閃而過，小白兔靜靜陪著，是她的觀眾，也是伙伴。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：32mm</li>
-<li>光圈：ƒ/3.5</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 1250</li>
-<li>拍攝時間：2025年3月25日 下午11:32</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
-<h2>#5</h2>
+<h2>#05</h2>
 <p><img src="./DSC02119.JPG" alt="DSC02119.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">她舉起玩具相機，假裝拍照的瞬間，彷彿在學習記錄這世界的樣子。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：35mm</li>
-<li>光圈：ƒ/3.5</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 1250</li>
-<li>拍攝時間：2025年3月25日 下午11:32</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
-<h2>#6</h2>
+<h2>#06</h2>
 <p><img src="./DSC02120.JPG" alt="DSC02120.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">女孩盤腿坐在墊上，專注理著繩子，童年就是這樣一場安靜又豐富的遊戲。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：35mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 3200</li>
-<li>拍攝時間：2025年3月25日 下午11:33</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
-<h2>#7</h2>
+<h2>#07</h2>
 <p><img src="./DSC02122.JPG" alt="DSC02122.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">轉個角度，雕塑依然生動，背景的蓮花與木槌點綴著手工與生活的交會。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：35mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/60s</li>
-<li>ISO：ISO 500</li>
-<li>拍攝時間：2025年3月25日 下午11:34</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
-<h2>#8</h2>
+<h2>#08</h2>
 <p><img src="./DSC02123.JPG" alt="DSC02123.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">粗獷質感的紙漿雕塑，像是野獸般靜靜站立，時間在它身上留下創作的痕跡。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：35mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/60s</li>
-<li>ISO：ISO 500</li>
-<li>拍攝時間：2025年3月25日 下午11:34</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
-<h2>#9</h2>
+<h2>#09</h2>
 <p><img src="./DSC02125.JPG" alt="DSC02125.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">細膩乾燥花與彩紙交錯，童佛在後方模糊守望，靜謐與祝福悄然流動。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：35mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/60s</li>
-<li>ISO：ISO 640</li>
-<li>拍攝時間：2025年3月25日 下午11:35</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
 <h2>#10</h2>
 <p><img src="./DSC02126.JPG" alt="DSC02126.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">童佛指天而立，花束簇擁著，彷彿在祝福每位走入生活的人心境平和。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：35mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 1600</li>
-<li>拍攝時間：2025年3月25日 下午11:35</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
 <h2>#11</h2>
 <p><img src="./DSC02128.JPG" alt="DSC02128.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">莊嚴的佛像與兩側孔雀雕飾靜靜佇立，香氣與時光在這一角凝結。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：35mm</li>
-<li>光圈：ƒ/3.2</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 1250</li>
-<li>拍攝時間：2025年3月25日 下午11:36</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
 <h2>#12</h2>
 <p><img src="./DSC02132.JPG" alt="DSC02132.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">屋內擺滿書櫃與生活物件，小女孩望向鏡頭，一幕家常溫柔的午後光景。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：35mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/160s</li>
-<li>ISO：ISO 3200</li>
-<li>拍攝時間：2025年3月26日 上午12:11</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
 <h2>#13</h2>
 <p><img src="./DSC02137.JPG" alt="DSC02137.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">從高處俯視，女孩仰頭看鏡頭，嘴角沾著餅乾碎屑，露出俏皮又自在的神情。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：32mm</li>
-<li>光圈：ƒ/6.3</li>
-<li>快門：1/400s</li>
-<li>ISO：ISO 80</li>
-<li>拍攝時間：2025年3月26日 上午12:32</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
 <h2>#14</h2>
 <p><img src="./DSC02138.JPG" alt="DSC02138.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">女孩輕步走過牆角綠意，嘴裡咬著餅乾，陽光在她髮梢跳舞，彷彿生活的詩篇。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：32mm</li>
-<li>光圈：ƒ/4.5</li>
-<li>快門：1/200s</li>
-<li>ISO：ISO 80</li>
-<li>拍攝時間：2025年3月26日 上午12:32</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
 <h2>#15</h2>
 <p><img src="./DSC02140.JPG" alt="DSC02140.JPG"></p>
-<div class="photo-info">
+<div class="photo-description">陽光下的小院子裡，小女孩拿著餅乾露出燦爛笑容，彷彿整個午後都因她而溫暖。</div>
 
-<ul>
-<li>相機：SONY ILCE-7SM3</li>
-<li>鏡頭：FE 16-35mm F2.8 GM</li>
-<li>焦距：32mm</li>
-<li>光圈：ƒ/4.0</li>
-<li>快門：1/250s</li>
-<li>ISO：ISO 80</li>
-<li>拍攝時間：2025年3月26日 上午12:33</li>
-</ul>
-</div>
-
-<p>這張照片捕捉了一個特別的時刻，讓我們一起感受這份溫暖與寧靜。在這個瞬間，時光彷彿靜止，讓我們能夠細細品味生活中的每一個細節。</p>
 <hr>
 
       </div>

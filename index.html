@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片集</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="toolbar">
+            <button>搜索</button>
+            <button>筛选</button>
+        </div>
+    </nav>
+
+    <div class="photo-grid">
+        <article class="photo-item">
+            <img src="https://source.unsplash.com/random/800x600/?nature" alt="自然风光">
+            <div class="photo-item-info">
+                <h3 class="photo-title">山间晨雾</h3>
+                <div class="photo-meta">2025-03-24</div>
+            </div>
+        </article>
+        <article class="photo-item">
+            <img src="https://source.unsplash.com/random/800x600/?city" alt="城市风光">
+            <div class="photo-item-info">
+                <h3 class="photo-title">城市天际线</h3>
+                <div class="photo-meta">2025-03-22</div>
+            </div>
+        </article>
+        <article class="photo-item">
+            <img src="https://source.unsplash.com/random/800x600/?portrait" alt="人像">
+            <div class="photo-item-info">
+                <h3 class="photo-title">日光人像</h3>
+                <div class="photo-meta">2025-03-20</div>
+            </div>
+        </article>
+        <article class="photo-item">
+            <img src="https://source.unsplash.com/random/800x600/?landscape" alt="风景">
+            <div class="photo-item-info">
+                <h3 class="photo-title">广阔风景</h3>
+                <div class="photo-meta">2025-03-18</div>
+            </div>
+        </article>
+        <article class="photo-item">
+            <img src="https://source.unsplash.com/random/800x600/?street" alt="街景">
+            <div class="photo-item-info">
+                <h3 class="photo-title">城市街景</h3>
+                <div class="photo-meta">2025-03-15</div>
+            </div>
+        </article>
+    </div>
+
+    <aside class="photo-info">
+        <h2 class="photo-info-title">照片信息</h2>
+        <ul>
+            <li>相機：SONY ILCE-7SM3</li>
+            <li>鏡頭：FE 16-35mm F2.8 GM</li>
+            <li>焦距：32mm</li>
+            <li>光圈：ƒ/4.0</li>
+            <li>快門：1/160s</li>
+            <li>ISO：ISO 4000</li>
+            <li>拍攝時間：2025年3月25日 下午11:28</li>
+        </ul>
+    </aside>
+
+    <script>
+        // 简单的移动端检测
+        function checkMobile() {
+            const photoGrid = document.querySelector('.photo-grid');
+            const photoInfo = document.querySelector('.photo-info');
+            
+            if (window.innerWidth <= 1024) {
+                photoInfo.style.position = 'static';
+                photoGrid.style.marginRight = '0';
+            } else {
+                photoInfo.style.position = 'fixed';
+                photoGrid.style.marginRight = 'calc(var(--sidebar-width) + 2rem)';
+            }
+        }
+
+        // 图片项目点击事件
+        document.querySelectorAll('.photo-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // 可以在这里添加图片查看器的代码
+                console.log('查看图片:', this.querySelector('img').alt);
+            });
+        });
+
+        // 初始检查和窗口大小变化时检查
+        window.addEventListener('load', checkMobile);
+        window.addEventListener('resize', checkMobile);
+    </script>
+</body>
+</html> 
