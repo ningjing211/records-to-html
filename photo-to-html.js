@@ -15,7 +15,7 @@ const anthropic = new Anthropic({
 const folderName = process.argv[2] || 'Zora-Family';
 
 // 設定檔案路徑
-const inputDir = path.join(__dirname, folderName);
+const inputDir = path.join(__dirname, 'public', folderName);
 const markdownPath = path.join(inputDir, 'photo-story.md');
 const htmlPath = path.join(inputDir, 'photo-story.html');
 const descriptionsPath = path.join(inputDir, 'photo_descriptions.json');
