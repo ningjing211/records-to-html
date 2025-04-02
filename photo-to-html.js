@@ -253,7 +253,7 @@ function generateHtml(markdownContent) {
 
         /* 照片描述設定 */
         .photo-description {
-          font-size: 1.8em;
+          font-size: 2em;
           line-height: 2;
           color: #444;
           margin: 30px auto;
@@ -306,7 +306,7 @@ function generateHtml(markdownContent) {
         }
 
         blockquote p {
-          font-size: 1.6em;
+          font-size: 2em;
           line-height: 1.8;
           color: #2c3e50;
           font-weight: 300;
@@ -382,7 +382,7 @@ function generateHtml(markdownContent) {
           }
 
           h2 {
-            font-size: 1.8em;
+            font-size: 2em;
           }
 
           .photo-description {
