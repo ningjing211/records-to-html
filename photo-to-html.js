@@ -212,7 +212,7 @@ function generateHtml(markdownContent) {
 
         /* 容器設定 */
         .container {
-          max-width: 1200px;
+          max-width: 850px;
           margin: 0 auto;
           padding: 40px 20px;
         }
